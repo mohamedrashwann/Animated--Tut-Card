@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Nobile:400italic,700italic");
+
+html,body{
+  overflow: hidden;
+  background-color: #00000031;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: url(/egyptian-wall-with-hieroglyphs\ \(1\).jpg);
+  background-size: cover;
+  background-position: center; 
+
+}
+.card{
+  position: relative;
+  width: 360px;
+  height: 450px;
+ margin: 130px auto 0;
+   box-shadow:  10px 0px 15px rgba(0, 0, 0, 0.944);
+  background-color: #ffffff;
+  border-radius: 10px;
+   /* transform: rotate(-10deg) */
+}
+.card .container{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+.strikethrough{
+  text-decoration: line-through;
+}
+.card .container #head{
+  font-family: 'Nobile', sans-serif;
+  font-size: 1.5em;
+ margin: 55px auto;
+   color: #000;
+  font-weight: 700;
+  text-align: center;
+}
+.card p{
+  font-size: 1.1em;
+  line-height: 1.5;
+  font-family: 'Nobile';
+  color: #0984e3;
+  font-style: italic;
+  text-align: center;
+  margin: 30px auto 0px auto;
+}
+.card .front{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px;
+  border-radius: 100px !important;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: rotateY(0deg);            
+  transition: all .8s ease-in-out;
+}
+.card:hover .front{
+  transform: perspective(800px) rotateY(-170deg);
+}
+.card .front img, .card .back img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card .back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.944));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transition:  0.8s ease-in-out;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+}
+
+
+.card:hover .back{
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 16px 5px 0px rgba(0,0,0,0.3),
+              inset 2px 15px 15px 0px rgba(0,0,0,0.1);
+}
